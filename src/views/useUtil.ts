@@ -24,6 +24,12 @@ const useUtils = () => {
   const setToken = (token: string) => {
     window.sessionStorage.setItem('token', token)
   }
-  return { getServiceId, setServiceId, setFrame, getFrame, getName, setName, getToken, setToken }
+  const getUsername = () => {
+    return window.sessionStorage.getItem('username') as string
+  }
+  const setUsername = (username: string) => {
+    window.sessionStorage.setItem('username', username)
+  }
+  return { getServiceId, setServiceId, setFrame, getFrame, getName, setName, getToken, setToken, getUsername, setUsername }
 }
 export { useUtils }

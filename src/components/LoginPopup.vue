@@ -11,7 +11,7 @@ import { useSignupStore } from '@/stores/signuppopup'
 const popupStore = useLoginPopupStore()
 const { open } = useSignupStore()
 const { signin } = useUserStore()
-const { setToken } = useUtils()
+const { setToken,setUsername } = useUtils()
 const isLoading = ref(false)
 interface LoginForm {
   username: string
@@ -30,6 +30,7 @@ const onFinish = async (values: LoginForm) => {
     const { data } = await login(values.username, values.password)
     let token = data.access_token
     setToken(token)
+    setUsername(data.name)
     // 成功后将user-store更新为signin
     setTimeout(() => {
       signin()
