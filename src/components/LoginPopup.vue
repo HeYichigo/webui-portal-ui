@@ -58,7 +58,7 @@ const disabled = computed(() => {
     <div class="popup-login-content popup-content-layout popup-content-style popup-content-background">
       <a-form :model="formState" :wrapper-col="{ span: 24 }" autocomplete="off" layout="vertical" @finish="onFinish"
         @finishFailed="onFinishFailed">
-        <a-form-item label="账号" name="username" :colon="false" :rules="[{ required: true, message: '请输入账号!' }]">
+        <a-form-item label="学号" name="username" :colon="false" :rules="[{ required: true, message: '请输入学号!' }]">
           <a-input v-model:value="formState.username">
             <template #prefix>
               <UserOutlined class="site-form-item-icon" />
