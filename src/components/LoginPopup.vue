@@ -11,7 +11,7 @@ import { useSignupStore } from '@/stores/signuppopup'
 const popupStore = useLoginPopupStore()
 const { open } = useSignupStore()
 const { signin } = useUserStore()
-const { setToken,setUsername } = useUtils()
+const { setToken, setUsername } = useUtils()
 const isLoading = ref(false)
 interface LoginForm {
   username: string
@@ -54,39 +54,18 @@ const disabled = computed(() => {
 })
 </script>
 <template>
-  <div
-    v-if="popupStore.popup"
-    class="popup-position popup-layout popup-background"
-    @click.self="popupStore.close"
-  >
-    <div
-      class="popup-login-content popup-content-layout popup-content-style popup-content-background"
-    >
-      <a-form
-        :model="formState"
-        :wrapper-col="{ span: 24 }"
-        autocomplete="off"
-        layout="vertical"
-        @finish="onFinish"
-        @finishFailed="onFinishFailed"
-      >
-        <a-form-item
-          label="账号"
-          name="username"
-          :colon="false"
-          :rules="[{ required: true, message: '请输入账号!' }]"
-        >
+  <div v-if="popupStore.popup" class="popup-position popup-layout popup-background" @click.self="popupStore.close">
+    <div class="popup-login-content popup-content-layout popup-content-style popup-content-background">
+      <a-form :model="formState" :wrapper-col="{ span: 24 }" autocomplete="off" layout="vertical" @finish="onFinish"
+        @finishFailed="onFinishFailed">
+        <a-form-item label="账号" name="username" :colon="false" :rules="[{ required: true, message: '请输入账号!' }]">
           <a-input v-model:value="formState.username">
-            <template #prefix> <UserOutlined class="site-form-item-icon" /> </template
-          ></a-input>
+            <template #prefix>
+              <UserOutlined class="site-form-item-icon" />
+            </template></a-input>
         </a-form-item>
 
-        <a-form-item
-          label="密码"
-          name="password"
-          :colon="false"
-          :rules="[{ required: true, message: '请输入密码!' }]"
-        >
+        <a-form-item label="密码" name="password" :colon="false" :rules="[{ required: true, message: '请输入密码!' }]">
           <a-input-password v-model:value="formState.password">
             <template #prefix>
               <LockOutlined class="site-form-item-icon" />
@@ -95,16 +74,9 @@ const disabled = computed(() => {
         </a-form-item>
 
         <a-form-item :wrapper-col="{ span: 24 }">
-          <a-button
-            size="large"
-            :disabled="disabled"
-            style="width: 100%"
-            type="primary"
-            html-type="submit"
-            :loading="isLoading"
-            >登录</a-button
-          >
-          <span>没有用户？<a @click="open">注册</a></span>
+          <a-button size="large" :disabled="disabled" style="width: 100%" type="primary" html-type="submit"
+            :loading="isLoading">登录</a-button>
+          <!-- <span>没有用户？<a @click="open">注册</a></span> -->
         </a-form-item>
       </a-form>
     </div>
