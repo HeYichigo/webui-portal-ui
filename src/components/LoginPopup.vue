@@ -6,10 +6,8 @@ import { useUtils } from '@/views/useUtil'
 import { UserOutlined, LockOutlined } from '@ant-design/icons-vue'
 import { computed, reactive, ref } from 'vue'
 import { message } from 'ant-design-vue'
-import { useSignupStore } from '@/stores/signuppopup'
 
 const popupStore = useLoginPopupStore()
-const { open } = useSignupStore()
 const { signin } = useUserStore()
 const { setToken, setUsername } = useUtils()
 const isLoading = ref(false)
@@ -76,7 +74,6 @@ const disabled = computed(() => {
         <a-form-item :wrapper-col="{ span: 24 }">
           <a-button size="large" :disabled="disabled" style="width: 100%" type="primary" html-type="submit"
             :loading="isLoading">登录</a-button>
-          <!-- <span>没有用户？<a @click="open">注册</a></span> -->
         </a-form-item>
       </a-form>
     </div>
