@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import WebuiView from '@/views/WebuiView.vue'
+import WebView from '@/views/WebView.vue'
 import { onUnmounted, onMounted } from 'vue'
 import { usePortal } from '@/views/usePortal'
 import { useUtils } from '@/views/useUtil'
@@ -32,7 +32,7 @@ onUnmounted(() => {
 
 <template>
   <!-- v-if 判断login状态来切换view组件 -->
-  <WebuiView v-if="info.isLogin" />
+  <WebView v-if="info.isLogin" />
   <LoginView v-else></LoginView>
 </template>
 
