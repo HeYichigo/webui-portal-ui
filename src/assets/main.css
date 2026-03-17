@@ -56,9 +56,12 @@
   justify-content: center;
 }
 .title-background-img {
-  background: url('./main-logo.png');
-  background-position: top;
-  background-size: 300px;
+  /* background: url('./main-logo.png'); */
+  width: 300;
+  height: 300;
+  background: url('/logo.jpg');
+  background-position: center;
+  background-size: cover;
 }
 .background-img {
   height: 100vh;

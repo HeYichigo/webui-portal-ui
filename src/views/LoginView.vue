@@ -12,7 +12,7 @@ const letopen = () => {
 <template>
   <div class="notice notice-font">
     <div class="title title-background-img"></div>
-    <p>红旗“智·绘”AIGC平台</p>
+    <p>汽大一号造车工坊AIGC创意平台</p>
     <a-button class="btn-text btn-style" type="primary" shape="round" @click="letopen">
       <template #icon>
         <LoginOutlined />
@@ -30,9 +30,11 @@ const letopen = () => {
   width: 150px;
   margin-bottom: 30px;
 }
+
 .btn-style {
   margin-top: 10px;
 }
+
 .btn-text {
   width: 250px;
   height: 50px;
